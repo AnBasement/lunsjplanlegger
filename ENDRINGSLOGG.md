@@ -7,6 +7,14 @@ Format basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/), vers
 
 ## [Unreleased]
 
+## [0.2.0] - 18.05.2026
+
+### Lagt til
+- Prep for individuelle dager er nå skjult. Lagt til event listeners som åpner detaljer om prep ved klikk, og skjuler ved klikk.
+
+### Fikset
+- Kobler style.css til html.
+
 ## [0.1.0] – 09.05.2026
 
 ### Lagt til
