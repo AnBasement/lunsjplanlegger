@@ -73,16 +73,13 @@ let uker = [
 
 function visUke(uke) {
     const container = document.getElementById("ukeplan");
-
-    container.innerHTML = `<h2>${uke.navn}</h2>`;
+    let html = `<h2>${uke.navn}</h2>`;
 
     for (let dag of uke.dager) {
-        container.innerHTML += `
+        html += `
             <div class="dag">
                 <h3>${dag.dag}</h3>
-
-                <p class="lunsj-info"><strong>Lunsj:</strong> ${dag.lunsj}</p>
-
+                <p><strong>Lunsj:</strong> ${dag.lunsj}</p>
                 <div class="prep-detaljer">
                     <p><strong>Søndag prep:</strong> ${dag.søndagPrep}</p>
                     <p><strong>Kveld prep:</strong> ${dag.kveldPrep}</p>
@@ -92,14 +89,19 @@ function visUke(uke) {
             </div>
         `;
     }
+
+    container.innerHTML = html;
+    leggTilKlikkLyttere();
 }
+
+visUke(uker[0]);
 
 function leggTilKlikkLyttere() {
     const dager = document.querySelectorAll('.dag');
     
     dager.forEach(dagElement => {
         dagElement.addEventListener('click', function() {
-            this.classList.toggle('åpen');
+            console.log('Du klikket på:', this.querySelector('h3').textContent);
         });
     });
 }
