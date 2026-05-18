@@ -81,22 +81,28 @@ function visUke(uke) {
             <div class="dag">
                 <h3>${dag.dag}</h3>
 
-                <p><strong>Lunsj:</strong> ${dag.lunsj}</p>
+                <p class="lunsj-info"><strong>Lunsj:</strong> ${dag.lunsj}</p>
 
-                <p><strong>Søndag prep:</strong>
-                ${dag.søndagPrep}</p>
-
-                <p><strong>Kveld prep:</strong>
-                ${dag.kveldPrep}</p>
-
-                <p><strong>Morgen prep:</strong>
-                ${dag.morgenPrep}</p>
-
-                <p><strong>Ferdig:</strong>
-                ${dag.ferdig ? "Ja" : "Nei"}</p>
+                <div class="prep-detaljer">
+                    <p><strong>Søndag prep:</strong> ${dag.søndagPrep}</p>
+                    <p><strong>Kveld prep:</strong> ${dag.kveldPrep}</p>
+                    <p><strong>Morgen prep:</strong> ${dag.morgenPrep}</p>
+                    <p><strong>Ferdig:</strong> ${dag.ferdig ? "Ja" : "Nei"}</p>
+                </div>
             </div>
         `;
     }
 }
 
+function leggTilKlikkLyttere() {
+    const dager = document.querySelectorAll('.dag');
+    
+    dager.forEach(dagElement => {
+        dagElement.addEventListener('click', function() {
+            this.classList.toggle('åpen');
+        });
+    });
+}
+
 visUke(uker[0]);
+leggTilKlikkLyttere();

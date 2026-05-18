@@ -6,3 +6,44 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.dag {
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dag:hover {
+    background-color: #f5f5f5;
+}
+
+.dag h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.prep-detaljer {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.prep-detaljer p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.dag.åpen .prep-detaljer {
+    display: block;
+}
+
+.lunsj-info {
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
