@@ -99,7 +99,7 @@ function leggTilKlikkLyttere() {
     
     dager.forEach(dagElement => {
         dagElement.addEventListener('click', function() {
-            this.classList.toggle('åpen');
+            this.classList.toggle('open');
         });
     });
 }
