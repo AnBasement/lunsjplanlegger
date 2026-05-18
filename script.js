@@ -94,17 +94,14 @@ function visUke(uke) {
     leggTilKlikkLyttere();
 }
 
-visUke(uker[0]);
-
 function leggTilKlikkLyttere() {
     const dager = document.querySelectorAll('.dag');
     
     dager.forEach(dagElement => {
         dagElement.addEventListener('click', function() {
-            console.log('Du klikket på:', this.querySelector('h3').textContent);
+            this.classList.toggle('åpen');
         });
     });
 }
 
 visUke(uker[0]);
-leggTilKlikkLyttere();
